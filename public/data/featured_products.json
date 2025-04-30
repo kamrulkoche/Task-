@@ -1,0 +1,272 @@
+[
+    {
+        "id": 1,
+        "img": "/images/clock.png",
+        "name": "Amazfit Bip U Pro Smart Watch",
+        "price": "22000",
+        "discountPrice": "16500",
+        "rentPrice": "12000",
+        "rentDiscountPrice": "7500",
+        "descriptions": [
+            "1.43 inch HD Display",
+            "Built-in GPS",
+            "Blood Oxygen Measurement",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 2,
+        "img": "/images/clock.png",
+        "name": "Amazfit Bip U Pro Smart Watch",
+        "price": "22000",
+        "discountPrice": "16500",
+        "rentPrice": "12000",
+        "rentDiscountPrice": "7500",
+        "descriptions": [
+            "1.43 inch HD Display",
+            "Built-in GPS",
+            "Blood Oxygen Measurement",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 3,
+        "img": "/images/clock.png",
+        "name": "Xiaomi Mi Smart Band 6",
+        "price": "8000",
+        "discountPrice": "6000",
+        "rentPrice": "5000",
+        "rentDiscountPrice": "3500",
+        "descriptions": [
+            "1.56 inch AMOLED Display",
+            "SpO2 Tracking",
+            "Heart Rate Monitoring",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 4,
+        "img": "/images/clock.png",
+        "name": "Huawei Watch Fit",
+        "price": "18000",
+        "discountPrice": "12500",
+        "rentPrice": "9500",
+        "rentDiscountPrice": "5500",
+        "descriptions": [
+            "1.64 inch AMOLED Display",
+            "GPS Tracking",
+            "96 Workout Modes",
+            "10 days battery life"
+        ]
+    },
+    {
+        "id": 5,
+        "img": "/images/clock.png",
+        "name": "Realme Watch 2 Pro",
+        "price": "15000",
+        "discountPrice": "9000",
+        "rentPrice": "8000",
+        "rentDiscountPrice": "4000",
+        "descriptions": [
+            "1.75 inch Display",
+            "Blood Oxygen Monitor",
+            "90 Sports Modes",
+            "14 days battery life"
+        ]
+    },
+    {
+        "id": 6,
+        "img": "/images/clock.png",
+        "name": "Garmin Forerunner 45",
+        "price": "30000",
+        "discountPrice": "25000",
+        "rentPrice": "20000",
+        "rentDiscountPrice": "15000",
+        "descriptions": [
+            "GPS Running Watch",
+            "Heart Rate Monitor",
+            "Activity Tracker",
+            "Water-resistant"
+        ]
+    },
+    {
+        "id": 7,
+        "img": "/images/clock.png",
+        "name": "Samsung Galaxy Watch Active 2",
+        "price": "40000",
+        "discountPrice": "32000",
+        "rentPrice": "28000",
+        "rentDiscountPrice": "20000",
+        "descriptions": [
+            "1.4 inch AMOLED Display",
+            "Heart Rate Monitor",
+            "ECG support",
+            "Water-resistant up to 50m"
+        ]
+    },
+    {
+        "id": 8,
+        "img": "/images/clock.png",
+        "name": "Apple Watch Series 7",
+        "price": "70000",
+        "discountPrice": "62000",
+        "rentPrice": "55000",
+        "rentDiscountPrice": "40000",
+        "descriptions": [
+            "1.9 inch Retina Display",
+            "Blood Oxygen Monitor",
+            "ECG Support",
+            "50m Water-resistant"
+        ]
+    },
+    {
+        "id": 9,
+        "img": "/images/clock.png",
+        "name": "OnePlus Watch",
+        "price": "25000",
+        "discountPrice": "20000",
+        "rentPrice": "18000",
+        "rentDiscountPrice": "12000",
+        "descriptions": [
+            "1.39 inch AMOLED Display",
+            "Blood Oxygen Monitor",
+            "Heart Rate Monitoring",
+            "14 days battery life"
+        ]
+    },
+    {
+        "id": 10,
+        "img": "/images/clock.png",
+        "name": "Fitbit Versa 3",
+        "price": "29000",
+        "discountPrice": "24500",
+        "rentPrice": "20000",
+        "rentDiscountPrice": "15500",
+        "descriptions": [
+            "1.58 inch AMOLED Display",
+            "GPS + Heart Rate",
+            "Google Assistant support",
+            "6+ day battery life"
+        ]
+    },
+    {
+        "id": 11,
+        "img": "/images/clock.png",
+        "name": "Fossil Gen 5E",
+        "price": "35000",
+        "discountPrice": "28000",
+        "rentPrice": "24000",
+        "rentDiscountPrice": "18000",
+        "descriptions": [
+            "1.19 inch AMOLED Display",
+            "Google Wear OS",
+            "Heart Rate Monitor",
+            "Swimproof"
+        ]
+    },
+    {
+        "id": 12,
+        "img": "/images/clock.png",
+        "name": "Noise ColorFit Pro 3",
+        "price": "12500",
+        "discountPrice": "9500",
+        "rentPrice": "7500",
+        "rentDiscountPrice": "5500",
+        "descriptions": [
+            "1.55 inch Display",
+            "SpO2 Monitor",
+            "14 Sports Modes",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 13,
+        "img": "/images/clock.png",
+        "name": "Honor Band 6",
+        "price": "10000",
+        "discountPrice": "7500",
+        "rentPrice": "6000",
+        "rentDiscountPrice": "4500",
+        "descriptions": [
+            "1.47 inch AMOLED Display",
+            "Heart Rate & SpO2 Monitor",
+            "10 days battery life",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 14,
+        "img": "/images/clock.png",
+        "name": "Garmin Venu Sq",
+        "price": "38000",
+        "discountPrice": "32500",
+        "rentPrice": "28000",
+        "rentDiscountPrice": "20000",
+        "descriptions": [
+            "1.3 inch AMOLED Display",
+            "Pulse Oximeter",
+            "Body Battery Energy Monitor",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 15,
+        "img": "/images/clock.png",
+        "name": "Mi Watch Revolve",
+        "price": "20000",
+        "discountPrice": "16500",
+        "rentPrice": "14000",
+        "rentDiscountPrice": "10000",
+        "descriptions": [
+            "1.39 inch AMOLED Display",
+            "Heart Rate Monitor",
+            "Vo2 Max Support",
+            "Water-resistant"
+        ]
+    },
+    {
+        "id": 16,
+        "img": "/images/clock.png",
+        "name": "Amazfit GTR 2",
+        "price": "25000",
+        "discountPrice": "22000",
+        "rentPrice": "18000",
+        "rentDiscountPrice": "14000",
+        "descriptions": [
+            "1.39 inch AMOLED Display",
+            "Built-in GPS",
+            "Blood Oxygen Measurement",
+            "5 ATM water-resistant"
+        ]
+    },
+    {
+        "id": 17,
+        "img": "/images/clock.png",
+        "name": "Garmin Fenix 6 Pro",
+        "price": "90000",
+        "discountPrice": "82000",
+        "rentPrice": "75000",
+        "rentDiscountPrice": "60000",
+        "descriptions": [
+            "1.3 inch Display",
+            "Pulse Oximeter",
+            "Heart Rate Monitor",
+            "Water-resistant"
+        ]
+    },
+    {
+        "id": 18,
+        "img": "/images/clock.png",
+        "name": "Fitbit Sense",
+        "price": "35000",
+        "discountPrice": "28500",
+        "rentPrice": "24000",
+        "rentDiscountPrice": "18000",
+        "descriptions": [
+            "1.58 inch AMOLED Display",
+            "EDA Scan",
+            "SpO2 Monitoring",
+            "6+ day battery life"
+        ]
+    }
+]
