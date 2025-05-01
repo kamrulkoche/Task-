@@ -41,14 +41,16 @@ const LoginFrom = () => {
                 </div>
 
 
-                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-md transition duration-200">
-                    Log In
-                </button>
+                <Link href="/productsPage">
+                    <button className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 rounded-md transition duration-200">
+                        Log In
+                    </button>
 
+                </Link>
 
                 <p className="text-center text-sm text-gray-600 mt-6">
                     Already have an account?{' '}
-                    <Link href="/signup" className="text-orange-600 font-semibold hover:underline">
+                    <Link href="/auth/signup" className="text-orange-600 font-semibold hover:underline">
                         Sign up
                     </Link>
                 </p>
