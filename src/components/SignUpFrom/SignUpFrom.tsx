@@ -4,7 +4,7 @@ import Link from 'next/link'
 import logo1 from "../../../public/image/logo1.png"
 const SignUpFrom = () => {
     return (
-        <div className="min-h-screen bg-[#f0e6cc] flex items-center px-4 -mt-20 justify-center gap-16">
+        <div className="min-h-screen bg-[#f0e6cc] flex items-center px-4 justify-center gap-16">
             <div className="w-full lg:w-1/2  p-8 ">
                 <h2 className="text-3xl font-semibold text-center mb-8 text-gray-800">Sign Up</h2>
 
