@@ -1,9 +1,7 @@
-// src/app/(protected)/layout.tsx
 "use client"
-import Header from '@/components/Header/Header';
-import Products from '@/components/Products/Products';
-import '../../styles/globals.css';
 import Footer from '@/components/Footer/Footer';
+import Menu from '@/components/Menu/Menu';
+import '../../styles/globals.css';
 
 
 export default function ProtectedLayout({
@@ -14,12 +12,14 @@ export default function ProtectedLayout({
     return (
 
         <div className="font-poppins">
-
-            <Header />
-            <Products />
-            <Footer/>
-
+            <div className="">
+                <Menu />
+                <div className="">{children}</div>
+            </div>
+            <Footer />
         </div>
+
+
 
     );
 }

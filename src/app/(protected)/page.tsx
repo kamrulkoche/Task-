@@ -1,10 +1,15 @@
 "use client"
 
+import Header from "@/components/Header/Header"
+import Products from "@/components/Products/Products"
+
 const page = () => {
-    // const rentValue = 50;
 
     return (
-        <></>
+        <>
+            <Header />
+            <Products />
+        </>
     )
 }
 
