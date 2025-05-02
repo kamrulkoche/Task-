@@ -1,23 +1,88 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
-import Icon_body from "../../../public/image/Icon_body.png";
-import exit from "../../../public/image/image 17.png";
+import Icon_body from '../../../public/image/Icon_body.png';
+import exit from '../../../public/image/image 17.png';
 import Picture from '../Picture/Picture';
 import SideBar from '../SideBar/SideBar';
+
+interface Product {
+    id: number;
+    product_name: string;
+    product_price: number;
+    product_details: string;
+}
+
 export default function ProductsPage() {
-    const dummyProducts = Array.from({ length: 10 }).map((_, i) => ({
-        name: 'Camera',
-        price: `${(i + 1) * 2500}`,
-        description:
-            'Description: Get closer to the action with the 5x Digital Camera. This versatile camera offers premium photo capabilities, making it ideal for everyday photography needs.',
-    }));
+    const [products, setProducts] = useState<Product[]>([]);
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = async () => {
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
+            const res = await fetch('https://frontend-test.lamptechs.com/api/v1/user/product/list', {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            const data = await res.json();
+            if (data && Array.isArray(data.data)) {
+                setProducts(data.data);
+            } else {
+                console.warn('No product data found');
+            }
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
+
+    const handleDelete = async (productId: number) => {
+        const confirmed = window.confirm('Are you sure you want to delete this product?');
+        if (!confirmed) return;
+
+        try {
+            const token = localStorage.getItem('access_token');
+            if (!token) {
+                console.error('No access token found');
+                return;
+            }
+
+            const res = await fetch('https://frontend-test.lamptechs.com/api/v1/user/product/delete', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: productId }),
+            });
+
+            const data = await res.json();
+            console.log('Delete response:', data);
+
+            if (data.success) {
+                setProducts(products.filter((product) => product.id !== productId));
+
+            }
+        } catch (error) {
+            console.error('Error deleting product:', error);
+        }
+    };
 
     return (
         <div className="min-h-screen flex">
             <SideBar />
-
             <main className="flex-1 bg-gray-50 p-6">
-
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-2xl font-semibold">Products</h2>
                     <div className="flex items-center gap-2 ml-4">
@@ -32,17 +97,16 @@ export default function ProductsPage() {
                         placeholder="Search Products"
                         className="border-2 border-orange-600 rounded-xl px-3 py-2 w-64"
                     />
-
-
                     <Link href="/addProduct">
                         <button className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">
                             Add New +
-                        </button></Link>
+                        </button>
+                    </Link>
                 </div>
 
                 <div className="overflow-x-auto bg-white rounded shadow">
                     <table className="min-w-full table-auto">
-                        <thead className="bg-[#062D3E] text-white ">
+                        <thead className="bg-[#062D3E] text-white">
                             <tr className="text-left">
                                 <th className="p-3 text-base font-normal w-44">Product Name</th>
                                 <th className="p-3 text-base font-normal w-44">Price</th>
@@ -51,21 +115,25 @@ export default function ProductsPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {dummyProducts.map((product, idx) => (
-                                <tr key={idx} className="border-t border-gray-200">
-                                    <td className="p-3">{product.name}</td>
-                                    <td className="p-3">{product.price}</td>
-                                    <td className="p-3 text-sm text-gray-700">{product.description}</td>
+                            {products.map((product) => (
+                                <tr key={product.id} className="border-t border-gray-200">
+                                    <td className="p-3">{product.product_name}</td>
+                                    <td className="p-3">${product.product_price.toFixed(2)}</td>
+                                    <td className="p-3 text-sm text-gray-700">{product.product_details}</td>
                                     <td className="p-3 flex gap-3">
-                                        <Link href="/updateProduct"> <FiEdit2 className="text-blue-500 cursor-pointer" /></Link>
-                                        <FiTrash2 className="text-red-500 cursor-pointer" />
+                                        <Link href={`/updateProduct/${product.id}`}>
+                                            <FiEdit2 className="text-blue-500 cursor-pointer" />
+                                        </Link>
+                                        <FiTrash2
+                                            className="text-red-500 cursor-pointer"
+                                            onClick={() => handleDelete(product.id)}
+                                        />
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
-
 
                 <div className="flex justify-end items-center mt-4">
                     <nav className="flex items-center gap-1">
