@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
 import Icon_body from '../../../public/image/Icon_body.png';
@@ -16,6 +17,7 @@ interface Product {
 }
 
 export default function ProductsPage() {
+    const router = useRouter()
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -69,10 +71,12 @@ export default function ProductsPage() {
 
             const data = await res.json();
             console.log('Delete response:', data);
+            location.reload();
 
             if (data.success) {
                 setProducts(products.filter((product) => product.id !== productId));
-
+               console.log(data.success);
+               
             }
         } catch (error) {
             console.error('Error deleting product:', error);

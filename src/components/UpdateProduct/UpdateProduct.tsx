@@ -73,6 +73,7 @@ const UpdateProduct = () => {
 
         const data = await res.json();
         console.log("Update response:", data);
+        router.push('/productsPage');
 
         if (data.success) {
             alert('Product updated successfully');

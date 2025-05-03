@@ -6,8 +6,11 @@ import exit from "../../../public/image/image 17.png";
 import Picture from '../Picture/Picture';
 import SideBar from '../SideBar/SideBar';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 
 const AddProduct = () => {
+    const router = useRouter()
     const [formData, setFormData] = useState({
         product_name: '',
         product_price: '',
@@ -38,6 +41,7 @@ const AddProduct = () => {
             if (response.ok) {
                 alert("Product added successfully!");
                 setFormData({ product_name: '', product_price: '', product_details: '' });
+                router.push("/productsPage")
             } else {
                 alert(result.message || "Failed to add product.");
             }
