@@ -47,8 +47,13 @@ const SignUpFrom = () => {
         } 
         
         catch (err) {
-            setError(err.message);
-        } finally {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unexpected error occurred');
+            }
+        }
+         finally {
             setLoading(false);
         }
     }

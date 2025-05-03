@@ -12,7 +12,7 @@ const LoginFrom = () => {
     const [error, setError] = useState('');
     const router = useRouter();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
         setError('');
@@ -32,19 +32,25 @@ const LoginFrom = () => {
                 throw new Error(data.message || 'Login failed');
             }
 
-            // You can also store access_token if needed
             localStorage.setItem('access_token', data.access_token);
             router.push('/productsPage');
-        } catch (err) {
-            setError(err.message);
-        } finally {
+        }
+         catch (err) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError('An unexpected error occurred');
+            }
+        }
+        
+        finally {
             setLoading(false);
         }
     };
 
     return (
         <div className="min-h-screen bg-[#f0e6cc] flex items-center px-4 -mt-20 justify-center gap-16">
-            <form onSubmit={handleSubmit} className="w-full lg:w-1/2  p-8">
+            <form onSubmit={handleSubmit} className="w-full lg:w-1/2 p-8">
                 <h2 className="text-3xl font-semibold text-center mb-8 text-gray-800">Log In</h2>
 
                 {error && <p className="text-red-600 mb-4 text-center">{error}</p>}
